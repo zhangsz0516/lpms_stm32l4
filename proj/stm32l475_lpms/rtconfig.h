@@ -110,9 +110,6 @@
 /* Utilities */
 
 
-/* RT-Thread Utestcases */
-
-
 /* RT-Thread online packages */
 
 /* IoT - internet of things */
@@ -188,5 +185,13 @@
 
 /* Board extended module Drivers */
 
+
+/* LPMS Low Power Managemen System */
+
+#define LPMS_ENABLE
+#define BSP_USING_LPTIM
+#define LPMS_ENABLE_SLEEP
+#define LPMS_ENABLE_FREQ
+#define LPMS_ENABLE_DELAY
 
 #endif

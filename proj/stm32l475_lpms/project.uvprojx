@@ -10,7 +10,7 @@
       <TargetName>rt-thread</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER, __RTTHREAD__, STM32L475xx, __CLK_TCK=RT_TICK_PER_SECOND</Define>
               <Undefine></Undefine>
-              <IncludePath>.;applications;..\..\rt-thread\libcpu\arm\common;..\..\rt-thread\libcpu\arm\cortex-m4;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\drivers\include;board;board\CubeMX_Config\Inc;board\ports;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;.;..\..\rt-thread\include;..\..\rt-thread\components\libc\compilers\common;..\..\rt-thread\components\libc\compilers\common\none-gcc;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include;..\..\rt-thread\components\finsh;..\..\rt-thread\examples\utest\testcases\kernel</IncludePath>
+              <IncludePath>.;applications;..\..\rt-thread\libcpu\arm\common;..\..\rt-thread\libcpu\arm\cortex-m4;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\drivers\include;board;board\CubeMX_Config\Inc;board\ports;..\..\libraries\HAL_Drivers;..\..\libraries\HAL_Drivers\config;.;..\..\rt-thread\include;..\..\rt-thread\components\libc\compilers\common;..\..\rt-thread\components\libc\compilers\common\none-gcc;..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Inc;..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Include;..\..\libraries\STM32L4xx_HAL\CMSIS\Include;lpms;..\..\rt-thread\components\finsh</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -399,24 +399,24 @@
               <FilePath>..\..\rt-thread\libcpu\arm\common\div0.c</FilePath>
             </File>
             <File>
-              <FileName>showmem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\libcpu\arm\common\showmem.c</FilePath>
-            </File>
-            <File>
               <FileName>backtrace.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\rt-thread\libcpu\arm\common\backtrace.c</FilePath>
             </File>
             <File>
-              <FileName>cpuport.c</FileName>
+              <FileName>showmem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+              <FilePath>..\..\rt-thread\libcpu\arm\common\showmem.c</FilePath>
             </File>
             <File>
               <FileName>context_rvds.S</FileName>
               <FileType>2</FileType>
               <FilePath>..\..\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
+            </File>
+            <File>
+              <FileName>cpuport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -434,14 +434,19 @@
               <FilePath>..\..\rt-thread\components\drivers\serial\serial_v2.c</FilePath>
             </File>
             <File>
-              <FileName>dataqueue.c</FileName>
+              <FileName>workqueue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\components\drivers\src\dataqueue.c</FilePath>
+              <FilePath>..\..\rt-thread\components\drivers\src\workqueue.c</FilePath>
             </File>
             <File>
               <FileName>ringblk_buf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\rt-thread\components\drivers\src\ringblk_buf.c</FilePath>
+            </File>
+            <File>
+              <FileName>dataqueue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\components\drivers\src\dataqueue.c</FilePath>
             </File>
             <File>
               <FileName>completion.c</FileName>
@@ -454,19 +459,14 @@
               <FilePath>..\..\rt-thread\components\drivers\src\ringbuffer.c</FilePath>
             </File>
             <File>
-              <FileName>waitqueue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\components\drivers\src\waitqueue.c</FilePath>
-            </File>
-            <File>
               <FileName>pipe.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\rt-thread\components\drivers\src\pipe.c</FilePath>
             </File>
             <File>
-              <FileName>workqueue.c</FileName>
+              <FileName>waitqueue.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\components\drivers\src\workqueue.c</FilePath>
+              <FilePath>..\..\rt-thread\components\drivers\src\waitqueue.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -509,9 +509,9 @@
           <GroupName>Kernel</GroupName>
           <Files>
             <File>
-              <FileName>thread.c</FileName>
+              <FileName>idle.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\thread.c</FilePath>
+              <FilePath>..\..\rt-thread\src\idle.c</FilePath>
             </File>
             <File>
               <FileName>timer.c</FileName>
@@ -519,19 +519,9 @@
               <FilePath>..\..\rt-thread\src\timer.c</FilePath>
             </File>
             <File>
-              <FileName>scheduler.c</FileName>
+              <FileName>ipc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\scheduler.c</FilePath>
-            </File>
-            <File>
-              <FileName>mem.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\mem.c</FilePath>
-            </File>
-            <File>
-              <FileName>kservice.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\kservice.c</FilePath>
+              <FilePath>..\..\rt-thread\src\ipc.c</FilePath>
             </File>
             <File>
               <FileName>mempool.c</FileName>
@@ -539,24 +529,9 @@
               <FilePath>..\..\rt-thread\src\mempool.c</FilePath>
             </File>
             <File>
-              <FileName>idle.c</FileName>
+              <FileName>object.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\idle.c</FilePath>
-            </File>
-            <File>
-              <FileName>clock.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\clock.c</FilePath>
-            </File>
-            <File>
-              <FileName>device.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\device.c</FilePath>
-            </File>
-            <File>
-              <FileName>ipc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\ipc.c</FilePath>
+              <FilePath>..\..\rt-thread\src\object.c</FilePath>
             </File>
             <File>
               <FileName>components.c</FileName>
@@ -564,14 +539,39 @@
               <FilePath>..\..\rt-thread\src\components.c</FilePath>
             </File>
             <File>
-              <FileName>object.c</FileName>
+              <FileName>mem.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\rt-thread\src\object.c</FilePath>
+              <FilePath>..\..\rt-thread\src\mem.c</FilePath>
             </File>
             <File>
               <FileName>irq.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\rt-thread\src\irq.c</FilePath>
+            </File>
+            <File>
+              <FileName>clock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\src\clock.c</FilePath>
+            </File>
+            <File>
+              <FileName>kservice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\src\kservice.c</FilePath>
+            </File>
+            <File>
+              <FileName>thread.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\src\thread.c</FilePath>
+            </File>
+            <File>
+              <FileName>device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\src\device.c</FilePath>
+            </File>
+            <File>
+              <FileName>scheduler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\rt-thread\src\scheduler.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -584,39 +584,9 @@
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cryp.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_usart.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32l4xx_hal_cortex.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cortex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_pwr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_rcc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_rcc.c</FileName>
@@ -624,24 +594,9 @@
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_dma_ex.c</FileName>
+              <FileName>stm32l4xx_hal_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_crc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.c</FilePath>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_usart_ex.c</FileName>
@@ -649,19 +604,9 @@
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_usart_ex.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_uart_ex.c</FileName>
+              <FileName>system_stm32l4xx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_crc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32l4xx_hal_comp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_comp.c</FilePath>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Source\Templates\system_stm32l4xx.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_pwr_ex.c</FileName>
@@ -669,19 +614,99 @@
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_rng.c</FileName>
+              <FileName>stm32l4xx_hal_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rng.c</FilePath>
-            </File>
-            <File>
-              <FileName>system_stm32l4xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\libraries\STM32L4xx_HAL\CMSIS\Device\ST\STM32L4xx\Source\Templates\system_stm32l4xx.c</FilePath>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_usart.c</FilePath>
             </File>
             <File>
               <FileName>stm32l4xx_hal_cryp_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cryp_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_rcc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_lptim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_lptim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_dma_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_crc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_comp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_comp.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_rng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rng.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32l4xx_hal_uart_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\libraries\STM32L4xx_HAL\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lpms</GroupName>
+          <Files>
+            <File>
+              <FileName>lpms_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>lpms\lpms_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpms_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>lpms\lpms_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpms.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>lpms\lpms.c</FilePath>
             </File>
           </Files>
         </Group>

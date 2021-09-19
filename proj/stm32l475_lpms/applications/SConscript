@@ -4,13 +4,8 @@ cwd     = GetCurrentDir()
 
 src = Split('''
 main.c
+key.c
 ''')
-
-if GetDepend(['BSP_USING_SPI_LCD']):
-    src += ['lcd_sample.c']
-
-if GetDepend(['PKG_USING_NRF24L01']):
-    src += ['nrf24l01_init.c']
 
 CPPPATH = [str(Dir('#')), cwd]
 
